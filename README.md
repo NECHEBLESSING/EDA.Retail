@@ -13,11 +13,21 @@ This project performs Exploratory Data Analysis (EDA) on a retail sales dataset 
 - **Total Amount** – The total revenue generated from the transaction (Quantity Sold × Price per Unit).
 ## DATA TOOLS
 - pandas,python.
-## DATA PROCESSING
-#### This processes was carried out using pandas
+## DATA PROCESSING 
+#### During data processing, the following columns were added to enhance analysis and was done on **pandas**.
 - Convert the Date column into a proper datetime format.
-- `Day of Week` – Extracted from the `Date` column to analyze sales trends based on the day of the week.
-     Example values: "Monday", "Tuesday".
-- The data was checked of missing and inconsistent values
+
 ```python
-print(df.isnull().sum()).
+df.index = pd.to_datetime(df.index)
+print(df.index.dtype)
+```
+`Day of Week` – Extracted from the `Date` column to analyze sales trends based on the day of the week.
+Example values: "Monday", "Tuesday".
+     
+# Exploratory Data Analysis(EDA).
+1. **DATACLEANING**
+
+
+
+
+
