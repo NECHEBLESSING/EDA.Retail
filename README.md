@@ -26,6 +26,27 @@ Example values: "Monday", "Tuesday".
      
 # Exploratory Data Analysis(EDA).
 1. **DATACLEANING**
+-  Check for Missing Values
+```
+missing_values = df.isnull().sum()
+print("Missing Values:\n", missing_values)
+```
+- Convert 'Date' column to datetime type for proper time series analysis
+```
+df["Date"] = pd.to_datetime(df["Date"], format="%m/%d/%Y")
+```
+- Check for and Remove Duplicates
+```duplicates = df.duplicated().sum()
+print("Number of duplicates:", duplicates)
+```
+- Convert columns to appropriate numeric types if not already set
+```
+df["Transaction ID"] = df["Transaction ID"].astype(int)
+df["Age"] = df["Age"].astype(int)
+df["Quantity"] = df["Quantity"].astype(int)
+df["Price per Unit"] = df["Price per Unit"].astype(int)
+df["Total Amount"] = df["Total Amount"].astype(int)
+```
 
 
 
