@@ -14,39 +14,77 @@ This project performs Exploratory Data Analysis (EDA) on a retail sales dataset 
 ## DATA TOOLS
 - pandas,python.
 ## DATA PROCESSING 
-#### During data processing, the following columns were added to enhance analysis and was done on **pandas**.
-- Convert the Date column into a proper datetime format.
-
-```python
-df.index = pd.to_datetime(df.index)
-print(df.index.dtype)
-```
-`Day of Week` – Extracted from the `Date` column to analyze sales trends based on the day of the week.
-Example values: "Monday", "Tuesday".
-     
+#### During data processing, the following columns were added to enhance analysis and was done on **pandas**.    
 # Exploratory Data Analysis(EDA).
 1. **DATACLEANING**
--  Check for Missing Values
+- Check for missing values
 ```
-missing_values = df.isnull().sum()
-print("Missing Values:\n", missing_values)
+print(df.isnull().sum())
 ```
-- Convert 'Date' column to datetime type for proper time series analysis
+No missing values Found
+- Convert 'Date' column to datetime format
 ```
 df["Date"] = pd.to_datetime(df["Date"], format="%m/%d/%Y")
 ```
-- Check for and Remove Duplicates
-```duplicates = df.duplicated().sum()
-print("Number of duplicates:", duplicates)
+2. **Descriptive Statistics**
+- Summary statistics
 ```
-- Convert columns to appropriate numeric types if not already set
+print(df.describe())
 ```
-df["Transaction ID"] = df["Transaction ID"].astype(int)
-df["Age"] = df["Age"].astype(int)
-df["Quantity"] = df["Quantity"].astype(int)
-df["Price per Unit"] = df["Price per Unit"].astype(int)
-df["Total Amount"] = df["Total Amount"].astype(int)
+- Check the mean, median, mode of sales column
 ```
+print("Mean Sales:", df['Total Amount'].mean())
+print("Median Sales:", df['Total Amount'].median())
+print("Mode Sales:", df['Total Amount'].mode()[0])
+print("Standard Deviation:", df['Total Amount'].std())
+```
+2. **Time Series Analysis (Sales Trend Over Time)**
+- Group by date and sum sales
+```
+df_time_series = df.groupby('Date')['Total Amount'].sum()
+```
+- Plot sales trend over time
+```
+plt.figure(figsize=(12,6))
+df_time_series.plot(title='Sales Trend Over Time', marker='o', linestyle='-')
+plt.xlabel('Date')
+plt.ylabel('Total Amount')
+plt.grid()
+plt.show()
+```
+3. **Customer & Product Analysis**
+- Top 5 customers by total purchases
+```
+top_customers = df.groupby('Customer ID')['Total Amount'].sum().sort_values(ascending=False).head(5)
+print(top_customers)
+```
+- Top 5 best-selling products
+```
+top_products = df.groupby('Product Category')['Total Amount'].sum().sort_values(ascending=False).head(5)
+print(top_products)
+```
+4. Data Visualization
+-  Sales Distribution
+```
+plt.figure(figsize=(10,5))
+sns.histplot(df['sales'], bins=20, kde=True)
+plt.title('Sales Distribution')
+plt.show()
+```
+- Sales by Product Category (Bar Chart)
+```
+plt.figure(figsize=(12,6))
+df.groupby('product_category')['sales'].sum().sort_values().plot(kind='barh', color='skyblue')
+plt.title('Total Sales by Product Category')
+plt.xlabel('Total Sales')
+plt.ylabel('Product Category')
+plt.show()
+```
+- Correlation Heatmap
+```
+sns.heatmap(numeric_df.corr(), annot=True, cmap='coolwarm', fmt=".2f")
+```
+
 
 
 
