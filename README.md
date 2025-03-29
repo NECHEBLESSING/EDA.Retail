@@ -22,6 +22,10 @@ This project performs Exploratory Data Analysis (EDA) on a retail sales dataset 
 print(df.isnull().sum())
 ```
 No missing values Found
+
+![project EDA 1](https://github.com/NECHEBLESSING/EDA.Retail/blob/main/project%20EDA%201.PNG)
+
+
 - Convert 'Date' column to datetime format
 ```
 df["Date"] = pd.to_datetime(df["Date"], format="%m/%d/%Y")
@@ -38,6 +42,7 @@ print("Median Sales:", df['Total Amount'].median())
 print("Mode Sales:", df['Total Amount'].mode()[0])
 print("Standard Deviation:", df['Total Amount'].std())
 ```
+
 2. **Time Series Analysis (Sales Trend Over Time)**
 - Group by date and sum sales
 ```
