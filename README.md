@@ -23,7 +23,7 @@ print(df.isnull().sum())
 ```
 No missing values Found
 
-![project EDA 1](https://github.com/NECHEBLESSING/EDA.Retail/blob/main/project%20EDA%201.PNG)
+![Isnull](https://github.com/NECHEBLESSING/EDA.Retail/blob/main/project%20EDA%201.PNG)
 
 
 - Convert 'Date' column to datetime format
@@ -42,6 +42,7 @@ print("Median Sales:", df['Total Amount'].median())
 print("Mode Sales:", df['Total Amount'].mode()[0])
 print("Standard Deviation:", df['Total Amount'].std())
 ```
+![DesriptiveStaistics](https://github.com/NECHEBLESSING/EDA.Retail/blob/main/PJ%20EDA%207.PNG)
 
 2. **Time Series Analysis (Sales Trend Over Time)**
 - Group by date and sum sales
@@ -57,17 +58,21 @@ plt.ylabel('Total Amount')
 plt.grid()
 plt.show()
 ```
+![SALESSTRENDOVERTIME](https://github.com/NECHEBLESSING/EDA.Retail/blob/main/PJ%20EDA%202.PNG)
+
 3. **Customer & Product Analysis**
 - Top 5 customers by total purchases
 ```
 top_customers = df.groupby('Customer ID')['Total Amount'].sum().sort_values(ascending=False).head(5)
 print(top_customers)
 ```
+![top5customers](https://github.com/NECHEBLESSING/EDA.Retail/blob/main/PJ%209.PNG)
 - Top 5 best-selling products
 ```
 top_products = df.groupby('Product Category')['Total Amount'].sum().sort_values(ascending=False).head(5)
 print(top_products)
 ```
+![topproduct](https://github.com/NECHEBLESSING/EDA.Retail/blob/main/pj%2010.PNG)
 4. Data Visualization
 -  Sales Distribution
 ```
@@ -76,6 +81,8 @@ sns.histplot(df['sales'], bins=20, kde=True)
 plt.title('Sales Distribution')
 plt.show()
 ```
+![SD](https://github.com/NECHEBLESSING/EDA.Retail/blob/main/PJ%20EDA%204.PNG)
+
 - Sales by Product Category (Bar Chart)
 ```
 plt.figure(figsize=(12,6))
@@ -85,10 +92,14 @@ plt.xlabel('Total Sales')
 plt.ylabel('Product Category')
 plt.show()
 ```
+![PD](https://github.com/NECHEBLESSING/EDA.Retail/blob/main/PJ%20EDA%205.PNG)
+
 - Correlation Heatmap
 ```
 sns.heatmap(numeric_df.corr(), annot=True, cmap='coolwarm', fmt=".2f")
 ```
+![CH](https://github.com/NECHEBLESSING/EDA.Retail/blob/main/PJ%20EDA%206.PNG)
+
 
 
 
