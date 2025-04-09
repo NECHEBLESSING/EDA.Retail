@@ -1,7 +1,21 @@
+# EDA RETAIL
+## TABLE OF CONTENTS
+. [OVERVIEW](#overview)
+
+. [DATA SOURCE](#data-source)
+
+. [LANDING PAGE](#landing-page)
+
+. [DATA TOOLS](#data-tools)
+
+. [DATA PROCESSING](#data-processing)
+
+. [RECOMMENDATION](#recommendation)
+
 # OVERVIEW 
 This project performs Exploratory Data Analysis (EDA) on a retail sales dataset to uncover key insights into customer purchasing behavior, sales trends, and product performance. Using Python, Pandas, Seaborn, and Matplotlib.
 # DATA SOURCE
-- The primary data source is gotten from kaggle.com -
+- The primary data source is gotten from kaggle.com [DATASET](https://www.kaggle.com/datasets/mohammadtalib786/retail-sales-dataset)
 # Landing page
 - **Date** – The date when the transaction took place (formatted as MM/DD/YYYY).
 - **Customer ID** – A unique identifier assigned to each customer.
