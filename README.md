@@ -100,6 +100,74 @@ sns.heatmap(numeric_df.corr(), annot=True, cmap='coolwarm', fmt=".2f")
 ```
 ![CH](https://github.com/NECHEBLESSING/EDA.Retail/blob/main/PJ%20EDA%206.PNG)
 
+ ## RECOMMENDATION
+1.**Focus on High-Spending Customers**
+- A small percentage of customers  are responsible for a large portion of revenue.
+  
+**These are the following customers**
+  
+- Customer ID
+
+CUST015    2000
+
+CUST412    2000
+
+CUST970    2000
+
+CUST547    2000
+
+CUST281    2000
+
+  **Action**
+- Implement loyalty programs or exclusive discounts for top customers.
+- Send personalized emails and early access to new products to keep them engaged.
+
+2.**Optimize Sales on High-Traffic Days**
+- There are more significantly sales on weekends
+  
+**Action**
+- Launch flash sales or promotions on high-traffic days.
+- Ensure inventory and staffing are adequate on those days to meet demand.
+
+3 **Stock High-Performing Product Categories**
+- Electronics are purchased more often
+  
+**Action**
+- Increase inventory for top-performing categories.
+- Use product bundling to promote lower-performing product like Beauty categories alongside bestsellers.
+
+4.**Leverage Gender-Based Insights**
+- Sales are unevenly distributed across gender groups.
+  
+**Action**
+- Create gender-specific promotions or ads targeting the higher-spending group.
+- Explore product feedback to better cater to the needs of underrepresented groups.
+
+5 **Plan Inventory Based on Seasonal Sales Trends**
+- Sales trends over time reveal seasonal patterns.
+**Action**
+- Prepare early restocking plans and marketing campaigns aligned with peak months. The peak months are April,May and October ~
+- Using predictive models to forecast future sales during peak seasons,
+![PMF](https://github.com/NECHEBLESSING/EDA.Retail/blob/main/EDA%20200.PNG)
+
+- Showing forecast predictions of same months in 2025 will be the peak months.
+6 **Simplify Product Mix Based on Market Basket Analysis**
+- Certain products are frequently bought together Like (Clothing and Beauty)
+
+ **Action**
+- Offer combo deals or bundles to increase average transaction value.
+- Redesign store layout (online or physical) to promote frequently paired products.
+  
+7.**Improve Data Collection**
+- Insight: The current dataset lacks deeper demographics (like age, location).
+  
+**Action**
+- Encourage customers to create detailed profiles during sign-up.
+- Offer small incentives for completing surveys that enhance customer understanding.
+
+
+
+
 
 
 
